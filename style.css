@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+    /*  סטטי רוחב קבוע */
+    height: 960px;
+    /* גובה קבוע סטטי */
+    border: 3px solid #ccc;
+    gap: 3px;
+}
