@@ -2,13 +2,10 @@ const container = document.getElementById('grid-container');
 // Function to create the grid
 function createGrid(size) {
     container.innerHTML = ''; // Clear any existing grid
-
     // השורה להלן מאחסנת משתנה ובו הרוחב של המיכל
     const containerWidth = container.offsetWidth;
-
     const squareSize = containerWidth / size;
     // חישוב גודל הריבוע (בהתאם למספר הריבועים בשורה)
-
     // Create the squares
     for (let row = 0; row < size; row++) {
         for (let col = 0; col < size; col++) {
@@ -22,13 +19,22 @@ function createGrid(size) {
             // hovering effect dinamically
             square.addEventListener('mouseenter', () => {
                 // changing color
-                square.style.backgroundColor = 'darkblue';
+                const randomColor = getRandomColor();
+                square.style.backgroundColor = randomColor;
             });
         }
     }
 }
 
-// Initially create a 16x16 grid
+function getRandomColor() {
+    // כל האפשרויות התקפות בתווי צבע
+    const chars = '0123456789ABCDEF';
+    let color = '#'
+    for (let i = 0; i < 6; i++) {
+        color += chars[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 
 
 document.getElementById('new-grid').addEventListener('click', () => {
